@@ -1,0 +1,138 @@
+---
+title: "Working at ISD"
+subtitle: "University of Glasgow Induction Week 2019"
+author: 'Jack Hannah & David Caldwell <br> Information Services Division <br>'
+date: "25 September 2019 <br><br> Slides: https://github.com/jackhannah95/uofg-isd"
+output:
+  ioslides_presentation:
+    widescreen: true
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+# Load packages required
+library(knitr)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Bios
+
+### **Jack**
+Graduated from the University of Glasgow with a BSc (Hons) in Statistics in 2017. Joined ISD as an Information Analyst in July 2017. Works predominantly on using R to automate the creation of statistical reports and modernise the way in which they are presented.
+
+### **David**
+Graduated from the University of Glasgow with an M.Sci in Statistics in 2015. Did a placement year at Santander in 2013/14. Joined ISD as an Information Analyst in July 2015. Works on publishing data on hospital mortality and transforming how ISD releases its data more generally.
+
+
+## David's work
+
+Two main projects:
+
+- [Hospital Standardised Mortality Ratios](https://www.isdscotland.org/Health-Topics/Quality-Indicators/HSMR/)
+    - Using logistic regression to predict the number of deaths to occur within acute hospitals across Scotland
+    
+- [Reproducible Analytical Pipeline (RAP)](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf)
+    - Using R and RMarkdown to [automate a publication process](https://github.com/NHS-NSS-transforming-publications/hsmr) start to finish
+    
+
+## What does RAP involve?
+
+```{r out.width = "90%", fig.align = 'center'}
+include_graphics(here::here("2019-09-25_gu-isd", "images", "new_process.png"))
+```
+
+
+## Jack's work
+
+Some of the more interesting projects:
+
+- Long Term Conditions
+  - Using poisson regression to predict prevalence rates in Lanarkshire of various long term conditions, such as liver disease and arthritis
+  
+- Shiny
+  - Transforming [traditional PDF](https://www.isdscotland.org/Health-Topics/Hospital-Care/Publications/2017-06-27/2017-06-27-AcuteActivityQuarterly-Report.pdf?97298830748) statistical publications into [interactive dashboards](https://scotland.shinyapps.io/isd-hospital-activity-may19/) using the [shiny](https://shiny.rstudio.com/) package in R
+  
+- Open source contributions
+  - Making contributions to the [testthat](https://github.com/r-lib/testthat) and [tidylog](https://github.com/elbersb/tidylog) R packages via GitHub
+
+
+## Other interesting work in ISD
+
+- [Mortality trends](https://www.scotpho.org.uk/population-dynamics/recent-mortality-trends/)
+  - Investigating how trends in mortality are influenced by government austerity, pressure on NHS services and influenza outbreaks
+  
+- [Suicide statistics](https://www.isdscotland.org/Health-Topics/Public-Health/Publications/2019-06-26/2019-06-26-Suicide-Summary.pdf?)
+  - Gets a lot of media attention (e.g news articles about latest figures from the [BBC](https://www.bbc.co.uk/news/uk-scotland-48770610), [Herald](https://www.heraldscotland.com/news/17732242.rise-of-more-than-100-suicides-is-devastating-news/) and [Scotsman](https://www.scotsman.com/health/number-of-suicides-recorded-in-scotland-rises-by-15-in-a-year-1-4954440))
+
+
+
+## Perks and Benefits
+
+There are a number of perks and benefits that comes with working at ISD:
+
+- Flexible working: come and go as you please (within reason!)
+- Good holiday allowance: 27-33 days + 8 public holidays
+- Good work-life balance: variety of working patterns available
+
+And most importantly...
+
+- Jeans are acceptable
+
+
+## The Locations
+
+ISD has offices in a number of locations, but the two main ones are in Edinburgh and Glasgow:
+
+<div style="float: left; width: 50%; text-align: left">
+**The Edinburgh Office**
+```{r out.width = "70%", fig.align = 'left'}
+include_graphics(here::here("2019-09-25_gu-isd", "images", "gyle_location.png"))
+```
+</div>
+
+<div style="float: right; width: 50%;">
+**The Glasgow Office**
+```{r out.width = "65%", fig.align = 'left'}
+include_graphics(here::here("2019-09-25_gu-isd", "images", "meridian_location.png"))
+```
+</div>
+
+
+## Recruitment
+
+The recruitment process is usually two stages:
+
+- Application form with personal statement:
+    - Education/employment history
+    - Personal Statement
+    
+- Competency-based interview:
+    - Asked to provide examples of times you have demonstrated key competencies required for the job
+    - Potential for a technical question
+
+
+## Contact
+
+### Jack Hannah
+
+[Email](mailto:jack.hannah1@nhs.net)
+[GitHub](https://github.com/jackhannah95)
+
+### David Caldwell
+
+[Email](mailto:david.caldwell1@nhs.net)
+[GitHub](https://github.com/davidc92)
+
+### Transforming Publishing Programme (the team we're part of)
+
+[Email](mailto:nss.isdtransformingpublishing@nhs.net)
+[GitHub](https://github.com/NHS-NSS-transforming-publications)
+[Website](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/)
+
+### ISD
+
+[Email](mailto:NSS.isdSHIS@nhs.net)
+[GitHub](https://github.com/Health-SocialCare-Scotland)
+[Website](https://www.isdscotland.org/)
