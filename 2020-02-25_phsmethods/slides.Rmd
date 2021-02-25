@@ -1,0 +1,152 @@
+---
+title: "phsmethods R Package"
+subtitle: "PHI useR Group"
+author: 'Jack Hannah <br> Transforming Publishing Programme <br>'
+date: "25 February 2020 <br><br> Slides: https://github.com/jackhannah95/phsmethods-useR"
+output:
+  ioslides_presentation:
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+# Load packages required
+library(knitr)
+library(dplyr)
+library(phsmethods)
+library(gt)
+
+knitr::opts_chunk$set(echo = TRUE)
+
+pub_text <- c("Table 1 (Hospital Standardised Mortality Ratios)",
+              paste("Table 2 (NHSScotland, NHS Board and hospital overall", 
+                    "crude mortality trends and NHSScotland crude mortality", 
+                    "trends by demographics and quarter)"),
+              paste("Table 3 (Crude 30-day mortality from discharge and", 
+                    "Overall population crude mortality rates by NHS Board", 
+                    "and quarter)"))
+```
+
+## Why write [{phsmethods}](https://github.com/Health-SocialCare-Scotland/phsmethods)?
+
+- Benefit to PHS: lots of analysts do the same things in different ways - it's a waste of time and effort and causes inconsistencies
+
+- Benefit to developers and contributors: to learn how to write a 'real' package
+
+## file_size()
+```{r}
+# All files in the data folder
+file_size(here::here("2020-02-25_phsmethods", "data"))
+```
+
+## file_size()
+```{r}
+# Excel files only
+file_size(here::here("2020-02-25_phsmethods", "data"), 
+          pattern = ".xlsx$")
+```
+
+## file_size() in practice
+This is the 'List of Tables' section from page 25 of the [2019-11-12 HSMR publication](https://www.isdscotland.org/Health-Topics/Quality-Indicators/Publications/2019-11-12/2019-11-12-HSMR-Report.pdf):
+
+```{r, echo = FALSE, size = "150%"}
+include_graphics(here::here("2020-02-25_phsmethods", "images", "2019-11-12_HSMR-Tables.jpg"))
+```
+
+## Recreate using file_size and [{gt}](https://github.com/rstudio/gt)
+```{r, gt, results = "hide", warning = FALSE}
+file_size(here::here("2020-02-25_phsmethods", "data"), 
+          pattern = ".xlsx?$") %>%
+  mutate(name = pub_text) %>%
+  gt() %>%
+  tab_style(style = cell_borders(),
+            locations = cells_body(columns = everything(),
+                                   rows = everything())) %>%
+  tab_style(style = cell_text(color = "white", weight = "bolder"),
+            locations = cells_column_labels(columns = everything())) %>%
+  tab_style(style = cell_text(color = "purple", 
+                              decorate = "underline"),
+            locations = cells_body(columns = vars(name))) %>%
+  tab_style(style = cell_text(weight = "bold"),
+            locations = cells_body(columns = vars(name, size))) %>%
+  tab_style(style = cell_fill(color = "darkorchid4"),
+            locations = cells_column_labels(columns = everything())) %>%
+  cols_width(vars(name) ~ px(620), TRUE ~ px(75)) %>%
+  cols_label(name = "File Name", size = "File and Size")
+```
+
+## Recreate using file_size and [{gt}](https://github.com/rstudio/gt)
+
+```{r, ref.label = "gt", echo = FALSE}
+```
+
+## fin_year() and qtr() functions
+
+```{r}
+lubridate::today()
+
+fin_year(lubridate::today())
+qtr(lubridate::today())
+qtr(lubridate::today(), format = "short")
+```
+
+## fin_year() and qtr() in RMarkdown
+
+This is from the 'Main Points' section of the [2019-11-26 Smoking Cessation Services summary report](https://www.isdscotland.org/Health-Topics/Public-Health/Publications/2019-11-26/2019-11-26-SmokingCessationLDPstandard-Summary.pdf?):
+
+```{r, echo = FALSE, size = "200%"}
+include_graphics(here::here("2020-02-25_phsmethods", "images", "2019-11-26_Smoking-Cessation-Services.jpg"))
+```
+
+## fin_year() and qtr() in RMarkdown
+
+In RMarkdown:
+
+```{r}
+data_end <- lubridate::dmy(30062019)
+```
+
+During Quarter **`r lubridate::quarter(data_end, fiscal_start = 4)`** **`r paste0("(", qtr(data_end), ")")`**  
+`r "\U2022"` In the **`r english::ordinal(lubridate::quarter(data_end, fiscal_start = 4))`** quarter of financial year **`r fin_year(data_end)`**, NHS Scotland contributed 23.1% (1,624 out of 7,026 self-reported twelve-week quits) towards the required annual LDP Standard. If this pattern continued for the remainder of the financial year, NHS Scotland would achieve 92.4% of the required Standard.
+
+## fin_year() and qtr() in RMarkdown
+
+In RMarkdown:
+
+```{r}
+data_end <- lubridate::dmy(30062019)
+```
+
+**During Quarter `` `r
+lubridate::quarter(data_end, fiscal_start = 4)` `` `` `r
+paste0("(", qtr(data_end), ")")` ``**  
+`` `r
+"\U2022"` `` In the `` `r
+english::ordinal(lubridate::quarter(data_end, fiscal_start = 4))` `` quarter of financial year `` `r
+fin_year(data_end)` ``, NHS Scotland contributed 23.1% (1,624 out of 7,026 self-reported twelve-week quits) towards the required annual LDP Standard. If this pattern continued for the remainder of the financial year, NHS Scotland would achieve 92.4% of the required Standard.
+
+## Other functions in phsmethods
+
+- `postcode()` formats improperly recorded postcodes
+- `qtr_end()` calculates the final month in a quarter
+- `qtr_next()` calculates the next quarter
+- `qtr_prev()` calculates the previous quarter
+
+## Future developments
+
+- The package needs a new maintainer - I'm leaving in April
+
+- Contributions from others in PHS - development is under way to develop functions to group ages into age bands and to turn geography codes into names
+
+- Build a [{pkgdown}](https://pkgdown.r-lib.org/) website?
+
+- Create functions for agreed-upon methodologies by the 'new SAG'
+
+## Contact and Links
+
+- Email: [jack.hannah1@nhs.net](mailto:jack.hannah1@nhs.net)
+
+- GitHub: [jackhannah95](https://github.com/jackhannah95)
+
+- [phsmethods GitHub repository](https://github.com/Health-SocialCare-Scotland/phsmethods)
+
+- [Blogpost](https://www.tidyverse.org/blog/2017/08/contributing/) by Jim Hester on contributing to open source software
