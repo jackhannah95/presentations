@@ -1,0 +1,64 @@
+---
+title: "Scaling RAP <br> in NHS Scotland"
+subtitle: "Transforming Publishing Programme"
+author: 'Jack Hannah <br> Information Services Division <br>'
+date: "28 May 2019 <br><br> Slides: https://github.com/jackhannah95/rap-champions/"
+output:
+  ioslides_presentation:
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## RAP Rollout
+
+- The [Transforming Publishing](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/) (TPP) team have begun to roll out RAP to other 
+teams in ISD using a buddy system
+
+- One or two members of TPP 'buddy up' with another team to help them create a 
+Reproducible Analytical Pipeline for their publication
+
+- The bulk of the development work is done by the team being 'buddied'; TPP's 
+role is to provide code reviews; offer assistance with R and Git when required; 
+advise on timelines; and, more generally, offer guidance wherever it is required
+
+- As a minimum, we recommend teams aim for level 4 (a or b or both) as 
+laid out in our [RAP paper](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf)
+
+
+## Before the buddying
+
+- Prior to working on RAP, analysts in ISD must go on an introductory Tidyverse 
+training course (run by [Jumping Rivers](https://www.jumpingrivers.com/)) and 
+attend a tutorial on using Git and GitHub (run internally by TPP)
+
+- Following this, we ask them to complete an [R Skills survey](https://www.nsssurvey2.scot.nhs.uk/index.php?r=survey/index/sid/296986/lang/en) 
+and a [short exercise](https://github.com/NHS-NSS-transforming-publications/R-exercise) 
+to assess their competence with R
+
+- We also ask them to look at our [Toolkit](https://github.com/NHS-NSS-transforming-publications/Toolkit), which 
+contains links to our  resources on R, RMarkdown, version control, RAP, shiny 
+and more
+
+
+## Buddying in action
+
+- The first publication to undergo the buddy system is the [Scottish Bowel Screening Programme Statistics](https://www.isdscotland.org/Health-Topics/Cancer/Publications/2018-08-07/2018-08-07-Bowel-Screening-Publication-Report.pdf?8727663756) (SBSS)
+
+- At the beginning of the process, the two analysts responsible for the 
+publication created a document detailing the sections of their publication 
+report which required to be automated
+
+- They also created a plan detailing the scripts they required to write and the 
+associated timelines for doing so, which they update fortnightly
+
+- Since the beginning of April, they've converted most of the back end of the 
+publication from SPSS to a version controlled, peer reviewed R project held in a  
+(currently private) GitHub repository
+
+
+## Questions/Discussion
+
+How are you approaching scaling RAP in your organisation?
