@@ -1,0 +1,202 @@
+---
+title: "Obscure Packages"
+subtitle: "PHI useR Group"
+author: 'Jack Hannah <br> Transforming Publishing Programme <br>'
+date: "26 March 2019 <br><br> Slides: https://github.com/jackhannah95/obscure-packages/"
+output:
+  ioslides_presentation:
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+# Load package required
+library(knitr)
+
+knitr::opts_chunk$set(echo = TRUE, results = "hold")
+```
+
+
+## tidylog
+
+- [tidylog](https://github.com/elbersb/tidylog) provides wrappers around basic 
+[dplyr](https://github.com/tidyverse/dplyr) functions
+
+- These wrapper functions print a message in the console to describe the result 
+of applying the corresponding dplyr function
+
+- To use, just load tidylog after dplyr:
+
+```{r, warning = FALSE, message = FALSE}
+library(dplyr)
+library(tidylog)
+```
+
+
+## tidylog::filter()
+
+```{r}
+df <- tibble::tibble(chi_number = c(1, 2, 3, 4),
+                     main_condition = c("J430", "R268", "J404", 
+                                        "J449"))
+df
+```
+
+
+## tidylog::filter()
+
+```{r}
+df <- tibble::tibble(chi_number = c(1, 2, 3, 4),
+                     main_condition = c("J430", "R268", "J404", 
+                                        "J449"))
+
+# Select cases with COPD diagnosis (J40 - J44)
+copd <- df %>%
+  tidylog::filter(grepl("^j4[0-4]", main_condition))
+
+# No rows selected - check code for error
+```
+
+
+## tidylog::filter()
+
+```{r}
+df <- tibble::tibble(chi_number = c(1, 2, 3, 4),
+                     main_condition = c("J430", "R268", "J404", 
+                                        "J449"))
+
+# Select cases with COPD diagnosis (J40 - J44)
+copd <- df %>%
+  tidylog::filter(grepl("^J4[0-4]", main_condition))
+```
+
+
+## here
+
+- If you ever start an R script with setwd() or rm(list = ls()) - stop
+
+- Instead, use [here](https://github.com/r-lib/here) and [RStudio Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+
+- Projects automatically set your working directory and here allows you to 
+define filepaths relatively to it
+
+```{r}
+library(here)
+```
+
+
+## here::here()
+
+```{r message = FALSE}
+# Save earlier dataset as CSV file to `data` sub-folder
+readr::write_csv(df, here::here("2019-03-26_obscure-packages", 
+                                "data", 
+                                "df.csv"))
+
+# Now load it back in
+readr::read_csv(here::here("2019-03-26_obscure-packages", 
+                           "data", 
+                           "df.csv"))
+```
+
+
+## janitor
+
+- [janitor](https://github.com/sfirke/janitor) provides a multitude of functions 
+for 'cleaning' data
+
+- It's specifically designed with beginner and intermediate R users in mind
+
+- While not part of the [tidyverse](https://www.tidyverse.org/packages/), it's 
+designed to work well with pipes
+
+```{r, echo = FALSE, fig.align = 'center'}
+include_graphics(here::here("2019-03-26_obscure-packages", "images", "janitor_logo.png"))
+```
+
+
+## janitor::clean_names()
+
+```{r}
+names <- tibble::tibble(VAR_ONE = "ALL CAPS",
+                        var.two = "dot",
+                        VarThree = "No space",
+                        `Var four` = "Space",
+                        `% Var` = "symbol")
+names
+```
+
+
+## janitor::clean_names()
+
+```{r}
+names <- tibble::tibble(VAR_ONE = "ALL CAPS",
+                        var.two = "dot",
+                        VarThree = "No space",
+                        `Var four` = "Space",
+                        `% Var` = "symbol")
+names %>%
+  janitor::clean_names()
+```
+
+
+## fuzzyjoin
+
+- You're probably familiar with dplyr's join operators (`left_join`, `full_join`, 
+`anti_join`, etc.)
+
+- [fuzzyjoin](https://github.com/dgrtwo/fuzzyjoin) provides similar operators - 
+the difference being they allow inexact matching
+
+- For example, `dplyr::left_join(x, y, by = "p")` adds variables from y to x for 
+observations which have the same value of p in both datasets
+
+- `fuzzyjoin::fuzzy_left_join(x, y, by = "p", match.fun = `` `>` ``)` adds  
+variables from y to x for observations which have a greater value of p in x than 
+in y
+
+
+## fuzzyjoin::fuzzy_left_join()
+
+```{r}
+# Use same dataset as before
+df <- tibble::tibble(chi_number = c(1, 2, 3, 4),
+                     main_condition = c("J430", "R268", "J404", 
+                                        "J449"))
+# Define lookup file
+look <- tibble::tibble(code = c("J40", "J410", "J42", "J43", "J449"),
+                       value = c(1, 2, 3, 4, 5))
+look
+```
+
+
+## fuzzyjoin::fuzzy_left_join()
+
+- Suppose you want to add the 'value' variable from the lookup to the data for 
+cases when the lookup code matches a substring of a patient's ICD10 code
+
+- Using `dplyr::left_join()` would likely necessitate an arduous process of 
+creating new substring variables in each dataset, doing two joins, then 
+combining variables
+
+
+## fuzzyjoin::fuzzy_left_join()
+
+Using `fuzzyjoin::fuzzy_left_join()` and `stringr::str_detect()`:
+
+```{r}
+df %>%
+  fuzzyjoin::fuzzy_left_join(look, 
+                             by = c("main_condition" = "code"),
+                             match_fun = stringr::str_detect)
+```
+
+
+## Links
+
+Email: [jack.hannah1@nhs.net](mailto:jack.hannah1@nhs.net)
+
+
+[Transforming Publishing on GitHub](https://github.com/NHS-NSS-transforming-publications)
+
+
+[PHI on GitHub](https://github.com/Health-SocialCare-Scotland)
