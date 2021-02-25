@@ -1,0 +1,167 @@
+---
+title: "Reproducible Analytical <br> Pipelines for Health and <br> Social Care Publications"
+subtitle: "RSS Annual Conference 2019"
+author: 'Jack Hannah & David Caldwell <br> NHS National Services Scotland <br>'
+date: "3 September 2019 <br><br> Slides: https://github.com/jackhannah95/rss-2019"
+output:
+  ioslides_presentation:
+    widescreen: true
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+# Load packages required
+library(knitr)
+library(magrittr)
+library(kableExtra)
+
+knitr::opts_chunk$set(echo = FALSE)
+
+# Create data frame for levels of automation table
+automation_levels <- data.frame(
+  c(1:3, c("4a", "4b"), 5:7),
+  c("Ad hoc R code",
+    "R project",
+    "R project under version control (VC)",
+    "R project under VC and peer reviewed (wrangling)",
+    "Replicable report in Rmarkdown (publication)",
+    "Near RAP (as above plus data quality assurance and package management)",
+    "Full RAP (as above plus unit testing and documentation)",
+    "R package"))
+```
+
+
+## Background
+
+- The Information Services Division (ISD) of the National Health Service (NHS) Scotland produces around 200 official and national statistics publications each year.
+- Traditional publication output is a **static pdf document** with accompanying **excel tables**.
+
+```{r out.width = "50%", fig.align = 'center'}
+include_graphics(here::here("2019-09-03_rap-health-social-care", "images", "pdf_report.png"))
+```
+
+
+## Traditional publication process
+
+```{r out.width = "70%", fig.align = 'center'}
+include_graphics(here::here("2019-09-03_rap-health-social-care", "images", "traditional_process.png"))
+```
+
+- Complex (many steps between software)
+- Prone to error
+- Manual, menial tasks carried out by highly skilled people
+- Not reproducible or sustainable
+
+
+## The solution
+
+```{r out.width = "60%", fig.align = 'center'}
+include_graphics(here::here("2019-09-03_rap-health-social-care", "images", "rap_matts.png"))
+```
+
+[RAP companion](https://ukgovdatascience.github.io/rap_companion/)
+
+Combined the principles of **reproducible research** with **data science tools and best practice**.
+
+Basic principle is using one open-source piece of software for entire production process, from data extraction to final report.
+
+
+## What is a RAP project?
+
+- No (or few) manual steps = data and output produced using code
+- High quality and auditable = version control
+- Sustainable = peer review
+- "Bells and whistles" = _functions, documenting/testing these functions, package management and computing environment_
+
+```{r out.width = "60%", fig.align = 'center'}
+include_graphics(here::here("2019-09-03_rap-health-social-care", "images", "rap.jpg"))
+```
+
+
+## What is a RAP project?
+
+```{r out.width = "90%", fig.align = 'center'}
+include_graphics(here::here("2019-09-03_rap-health-social-care", "images", "new_process.png"))
+```
+
+
+## Case study: HSMR
+
+- The [Hospital Standardised Mortality Ratios publication](https://www.isdscotland.org/Health-Topics/Quality-Indicators/HSMR/) is released quarterly and includes:
+    - 40 page publication document
+    - 2 page summary document
+    - 7 Excel tables
+    
+- The aim of the case study was to RAP the entire publication process start to finish, teaching ourselves the principles of RAP so these skills can be spread to other teams
+
+
+## HSMR
+
+```{r out.width = "90%", fig.align = 'center'}
+include_graphics(here::here("2019-09-03_rap-health-social-care", "images", "hsmr_repo.png"))
+```
+
+
+## HSMR
+
+The finished HSMR product is a bespoke [R package](https://github.com/NHS-NSS-transforming-publications/hsmr) which contains:
+
+- 17 bespoke functions to carry out all tasks which are repeated each quarterly cyce
+- Error handling, unit testing and documentation of functions to ensure quality assurance of data, accuracy of function output and sustainability
+- Complete automation of entire process start to finish
+
+
+## HSMR Benefits
+
+A number of benefits have been realised with the RAP process for HSMR:
+
+- Processing time is down from 7 days to 50 minutes
+- There is a higher quality of code
+- Better workflow practices employed by the team
+- Increased enthusiasm and excitement from the team
+
+
+## HSMR Outlook
+
+- Due to the time freed up by the more efficient process, the HSMR team have more time to pursue more interesting pieces of work
+- Work has already begun on implementing some supplementary output into the RAP process
+- There is more time for exploratory analysis into potential improvements to the HSMR process
+
+
+## [Levels of RAP/automation](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf) {.smaller}
+
+<br>
+```{r, echo = FALSE, warning = FALSE}
+
+kable(automation_levels,
+      col.names = c("Level", "Description"),
+      format = "markdown") %>%
+  kable_styling(position = "center")
+```
+
+
+## Scaling RAP
+
+- The [Transforming Publishing (TPP)](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/) team have begun to roll out RAP to other teams in ISD using a buddy system
+
+- One or two members of TPP 'buddy up' with another team to help them create a Reproducible Analytical Pipeline for their publication
+
+- As a minimum, we recommend teams aim for level 4 (a or b or both) as laid out in our [RAP paper](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf)
+
+
+## Contact
+
+### Jack Hannah
+
+[Email](mailto:jack.hannah1@nhs.net)
+[GitHub](https://github.com/jackhannah95)
+
+### David Caldwell
+
+[Email](mailto:david.caldwell1@nhs.net)
+[GitHub](https://github.com/davidc92)
+
+### Transforming Publishing
+
+[Email](mailto:nss.isdtransformingpublishing@nhs.net)
+[GitHub](https://github.com/NHS-NSS-transforming-publications)
