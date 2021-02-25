@@ -1,3 +1,3 @@
-# Reproducible Analytical Pipelines for Health and Social Care Publications
+# RAP for Health and Social Care Publications
 
 Materials for a [presentation](https://rss.org.uk/RSS/media/File-library/Conference/RSS-Abstracts-booklet-2019-A4.pdf#page=7) on [Reproducible Analytical Pipelines (RAP)](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf) for Health and Social Care Publications. Presented jointly with [David Caldwell](https://github.com/davidc92) at the [Royal Statistical Society (RSS) 2019 Annual Conference](https://rss.org.uk/RSS/media/File-library/Conference/RSS-2019-Conference-directory-final-online-version.pdf) on 2019-09-03. Slides can be viewed on [RPubs](http://rpubs.com/jackhannah95/rss-2019).
