@@ -1,0 +1,150 @@
+---
+title: "Using Shiny at ISD"
+subtitle: "RSS Glasgow Local Group"
+author: 'Jack Hannah <br> Information Services Division <br>'
+date: "26 September 2019 <br><br> Slides: https://github.com/jackhannah95/rss-glasgow"
+output:
+  ioslides_presentation:
+    widescreen: true
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+# Load packages required
+library(knitr)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Background
+
+- The [Information Services Division (ISD)](https://www.isdscotland.org/) of the National Health Service (NHS) Scotland produces around 200 official and national statistics publications each year.
+- Traditional publication output is a **static pdf document** with accompanying **excel tables**.
+
+```{r out.width = "50%", fig.align = 'center'}
+include_graphics(here::here("2019-09-26_shiny-isd", "images", "pdf_report.png"))
+```
+
+
+## Why Change?
+
+<p class="comment">
+"Users of statistics and data should be at the centre of statistical production; their needs should be understood, their views sought and acted upon, and their use of statistics supported."
+</p>
+
+<p style="text-align: right"> <a href="https://www.statisticsauthority.gov.uk/wp-content/uploads/2018/02/Code-of-Practice-for-Statistics.pdf">- UKSA Code of Practice for Statistics, 2018</a></p>
+
+
+## The Transforming Publishing Programme
+
+- The [Transforming Publishing Programme (TPP)](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/) was devised to modernise the way in which ISD produces and presents its statistics
+
+- It's been through many iterations, but mostly operates by "borrowing" staff with particular skills (e.g. R, visualisation, user research, etc.) from other teams within ISD
+
+- Uses ["Agile" methodology](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/Agile-Project-Management/) for project management
+
+
+## TPP's "vision"
+
+```{r out.width = "60%", fig.align = 'center'}
+include_graphics(here::here("2019-09-26_shiny-isd", "images", "vision_poster.png"))
+```
+
+
+## TPP's Approach
+
+- Moving the back-end of publications from SPSS and Excel to R
+
+- Replacing PDF reports with web applications built using Shiny and D3
+
+- Using git and [GitHub](https://github.com/NHS-NSS-transforming-publications) for version control and peer review
+
+- A full user research process
+
+- Where possible, releasing data files as [open data](https://www.opendata.nhs.scot/)
+
+
+## What is Shiny?
+
+- [Shiny](https://shiny.rstudio.com/) is an R package that allows interactive web applications to be built within R
+
+- No experience in web development is necessary
+
+- Shiny apps need to be hosted somewhere - ISD shares a [shinyapps.io](https://www.shinyapps.io/) account with the Scottish Government and National Records of Scotland
+
+```{r out.width = "25%", fig.align = 'center'}
+include_graphics(here::here("2019-09-26_shiny-isd", "images", "shiny.png"))
+```
+
+
+## The User Research Process
+
+```{r out.width = "90%", fig.align = 'center'}
+include_graphics(here::here("2019-09-26_shiny-isd", "images", "user_research_process.png"))
+```
+
+
+## Mental Health Inpatient Activity
+
+- The [Mental Health Inpatient Activity](https://www.isdscotland.org/Health-Topics/Mental-Health/Publications/2019-09-10/mental-health-inpatient-activity/) publication was the second official statistics publication in ISD to be released using Shiny
+
+- It was first released in [September 2018](https://www.isdscotland.org/Health%2DTopics/Mental%2DHealth/Publications/2018%2D09%2D25/psychiatric%2Dinpatient%2Dactivity/)
+
+- The entire development process, from initial user engagement to the first release, took around six months
+
+
+## User Feedback
+
+```{r out.width = "75%", fig.align = 'center'}
+include_graphics(here::here("2019-09-26_shiny-isd", "images", "quotes.png"))
+```
+
+
+## Other Shiny Apps in ISD
+
+Not an exhaustive list:
+
+- [Acute Hospital Activity](https://www.isdscotland.org/Health-Topics/Hospital-Care/Publications/2019-05-28/acute-hospital-publication/?41624087096)
+
+- [Drug-Related Hospital Statistics](https://www.isdscotland.org/Health-Topics/Drugs-and-Alcohol-Misuse/Publications/2019-05-28/visualisation.asp)
+
+- [Alcohol Brief Interventions](https://www.isdscotland.org/Health-Topics/Drugs-and-Alcohol-Misuse/Publications/2019-06-25/visualisation.asp)
+
+- [Insights into Social Care in Scotland](https://scotland.shinyapps.io/nhs-social-care/)
+
+
+## The Limitations of Using Shiny in ISD
+
+- Shiny apps can be difficult to make accessible - particularly when embedded in iFrames
+
+- Confidential data cannot be stored on the shinyapps.io server
+
+- No structured training programme exists
+
+
+## The Future of Shiny in ISD
+
+```{r out.width = "75%", fig.align = 'center'}
+include_graphics(here::here("2019-09-26_shiny-isd", "images", "question_mark.png"))
+```
+
+
+## Contact
+
+### Jack Hannah
+
+[Email](mailto:jack.hannah1@nhs.net)
+[GitHub](https://github.com/jackhannah95)
+
+### Transforming Publishing Programme
+
+[Email](mailto:nss.isdtransformingpublishing@nhs.net)
+[GitHub](https://github.com/NHS-NSS-transforming-publications)
+[Website](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/)
+
+### ISD
+
+[Email](mailto:NSS.isdSHIS@nhs.net)
+[GitHub](https://github.com/Health-SocialCare-Scotland)
+[Website](https://www.isdscotland.org/)
