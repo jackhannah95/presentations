@@ -1,0 +1,120 @@
+---
+title: "Usability Testing"
+subtitle: "Transforming Publishing Programme"
+author: 'Jack Hannah <br> Information Services Division <br>'
+date: "23 July 2019 <br><br> Slides: https://github.com/jackhannah95/usability-testing"
+output:
+  ioslides_presentation:
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+# Load packages required
+library(knitr)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Why do Usability Testing?
+
+<p class="comment">
+"From the moment you know enough to talk about a product—any product, whether it's hardware, software, a video game, a training guide, or a website—you know too much to be able to tell if the product would be usable for a person who doesn't know what you know."
+</p>
+
+<p style="text-align: right"> <a href="https://books.google.co.uk/books/about/Usability_Testing_Essentials.html?id=tzX3J81MAAMC&redir_esc=y">- Carol M. Barnum, Usability Testing and Essentials, 2010</a></p>
+
+
+## User Research Process
+
+```{r out.width = "90%", fig.align = 'center'}
+include_graphics(here::here("2019-07-23_usability-testing", "images", "user_research_process.png"))
+```
+
+
+## User Research Process
+
+```{r out.width = "90%", fig.align = 'center'}
+include_graphics(here::here("2019-07-23_usability-testing", "images", "user_research_process_test.png"))
+```
+
+
+## What is Usability Testing?
+
+- Usability testing is designed to help diagnose and fix problems with prototypes of a software product (e.g. a shiny app) to determine whether the product is **usable**
+
+- It is undertaken during the development process, not after release
+
+- It is also a useful opportunity to assess the efficiency of, and user satisfaction with, a product
+
+
+## What is Usability Testing not for?
+
+The main purpose of usability testing is not:
+
+- To gain content ideas
+- To provide a demonstration of the prototype
+- To seek validation for your work
+
+
+## Planning a Usability Test
+
+When planning a usability test, at a minimum, the following should be considered:
+
+- What are the objectives of the testing?
+- Who will be the project lead?
+- What initial tasks must be undertaken to allow the testing to happen?
+
+
+## Recruiting Participants
+
+- An often arduous process that should be started as early as possible
+- Will involve a lot of back and forward, and comes with a lot of admin (such as room booking, paying travel expenses, etc)
+- Most tests only require a small number of participants
+
+
+## Test Design
+
+Three documents should be prepared when designing a usability test:
+
+- A test script for participants with a list of tasks to undertake
+- A test script for the facilitator(s) following the same structure, but containing extra space for recording completion rates for tasks and taking observation notes
+- A quantitive feedback form for participants, such as an [ease of use rating scale](https://measuringu.com/single-question/)
+
+
+## Test Implementation
+
+- A usability test should last no longer than one hour, and ideally should be facilitated by two people
+- Participants will often ask for help, however it is crucial that the facilitators do not intervene
+- A useful way of understanding a participant's thought processes is by encouraging them to think aloud when engaging in test activites
+- At the end of the session, it is important to inform participants of what happens next and how they will be kept involved in the project, and, if possible, to ascertain whether they would be interested in participating in future testing
+
+
+## Analysis and Outputs
+
+Methods used to analyse the results of usability tests will vary depending on the task, however the following will generally be required:
+
+- Any audio recordings must be transcribed and observational notes compiled
+- Splitting results into categories relating to each task and possibly developing recurring themes (e.g. problems identified, content requests, etc)
+- Writing a report on the overall process, to provide an audit trail of the work undertaken
+
+
+
+## Links
+
+Email: [jack.hannah1@nhs.net](mailto:jack.hannah1@nhs.net)
+
+
+[ISD Paper on Usability Testing](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Usability-Testing-v1-0.pdf)
+
+
+[ISD Paper on Initial User Engagement](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Initial-User-Engagement-v1-2.pdf)
+
+
+[Internal ISD presentation on User Engagement and Research by John Mowbray](https://www.youtube.com/watch?v=1y4YrtGqwj0&feature=youtu.be)
+
+
+[Transforming Publishing on GitHub](https://github.com/NHS-NSS-transforming-publications)
+
+
+[PHI on GitHub](https://github.com/Health-SocialCare-Scotland)
