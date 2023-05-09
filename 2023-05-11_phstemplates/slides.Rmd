@@ -1,7 +1,7 @@
 ---
 title: "Automating Reports with phstemplates"
 author: 'Jack Hannah'
-date: "11 May 2023 <br><br> Slides: url to slides"
+date: "11 May 2023 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2023-05-11_phstemplates"
 output:
   ioslides_presentation:
     css: my-theme.css
@@ -60,7 +60,7 @@ n_pre_covid <- 3722
 
 ## phstemplates
 
-* [A package](https://github.com/Public-Health-Scotland/phstemplates) designed to provide standard R templates for PHS.
+* A package designed to provide standard R templates for PHS.
 
 * Includes templates for code structure (scripts, projects, shiny apps) and output formats (Official/National Statistics reports, PowerPoint, HTML slides).
 
@@ -77,3 +77,25 @@ include_graphics(here("2023-05-11_phstemplates",
                       "images", 
                       "ns_template.png"))
 ```
+
+## Using phstemplates
+
+* Create your report inside the `.Rmd` file.
+
+* `Knit` the report:
+
+```{r out.width = "100%", fig.align = 'center', echo = FALSE}
+include_graphics(here("2023-05-11_phstemplates", 
+                      "images", 
+                      "knit.png"))
+```
+
+* [View the end result](https://github.com/jackhannah95/presentations/raw/main/2023-05-11_phstemplates/example-report/example-report.docx).
+
+## Links and Resources
+
+* [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+* [phstemplates GitHub repository](https://github.com/Public-Health-Scotland/phstemplates)
+
+* [End of Life publication GitHub repository](https://github.com/Public-Health-Scotland/end-of-life-pub/)
