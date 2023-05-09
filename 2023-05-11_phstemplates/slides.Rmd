@@ -1,0 +1,79 @@
+---
+title: "Automating Reports with phstemplates"
+author: 'Jack Hannah'
+date: "11 May 2023 <br><br> Slides: url to slides"
+output:
+  ioslides_presentation:
+    css: my-theme.css
+---
+
+```{r setup, include = FALSE}
+# Load packages required
+library(knitr)
+library(here)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Traditional Publicaton Process
+
+```{r out.width = "100%", fig.align = 'center', echo = FALSE}
+include_graphics(here("2023-05-11_phstemplates", 
+                      "images", 
+                      "traditional_process.png"))
+```
+
+## R Markdown
+
+* Document format within RStudio.
+
+* Allows code chunks to be embedded within text.
+
+* Supports a variety of output formats, including Word, PDF, PowerPoint and HTML.
+
+## R Markdown In Practice
+
+This is from the main points in the [2023-04-04 Cancer Waiting Times summary report](https://publichealthscotland.scot/media/18856/2023-04-04-cwt-summary.pdf):
+
+_4,262 eligible patients were referred for the 62-day standard, an increase of 2.3% from the previous quarter, and an increase of 14.5% from the quarter ending 31 December 2019._
+
+## R Markdown In Practice
+
+Three numeric values required to create this sentence:
+
+```{r}
+# Eligible patients in current quarter
+n_current <- 4262
+
+# Eligible patients in previous quarter
+n_previous <- 4161
+
+# Eligible patients in last pre-covid quarter
+n_pre_covid <- 3722
+```
+
+## R Markdown In Practice
+
+`prettyNum(n_current, big.mark = ",")` eligible patients were referred for the 62-day standard, `ifelse(n_current > n_previous, "an increase", "a decrease")` of `scales::percent((n_current - n_previous) / n_previous, accuracy = 0.1)` from the previous quarter, and `ifelse(n_current > n_pre_covid, "an increase", "a decrease")` of `scales::percent((n_current - n_pre_covid) / n_pre_covid, accuracy = 0.1)` from the quarter ending 31 December 2019.
+
+**`r prettyNum(n_current, big.mark = ",")`** eligible patients were referred for the 62-day standard, **`r ifelse(n_current > n_previous, "an increase", "a decrease")`** of **`r scales::percent((n_current - n_previous) / n_previous, accuracy = 0.1)`** from the previous quarter, and **`r ifelse(n_current > n_pre_covid, "an increase", "a decrease")`** of **`r scales::percent((n_current - n_pre_covid) / n_pre_covid, accuracy = 0.1)`** from the quarter ending 31 December 2019.
+
+## phstemplates
+
+* [A package](https://github.com/Public-Health-Scotland/phstemplates) designed to provide standard R templates for PHS.
+
+* Includes templates for code structure (scripts, projects, shiny apps) and output formats (Official/National Statistics reports, PowerPoint, HTML slides).
+
+* Can be installed on the Workbench with `install.packages("phstemplates")`.
+
+## Using phstemplates
+
+To create (e.g.) a summary report for a National Statistics publication:
+
+* File -> New File -> R Markdown... -> From Template -> PHS National Stats Report
+
+```{r out.width = "40%", fig.align = 'center', echo = FALSE}
+include_graphics(here("2023-05-11_phstemplates", 
+                      "images", 
+                      "ns_template.png"))
+```
