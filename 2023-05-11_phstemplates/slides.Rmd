@@ -12,10 +12,10 @@ output:
 library(knitr)
 library(here)
 
-knitr::opts_chunk$set(echo = TRUE)
+opts_chunk$set(echo = TRUE)
 ```
 
-## Traditional Publicaton Process
+## Traditional Publication Process
 
 ```{r out.width = "100%", fig.align = 'center', echo = FALSE}
 include_graphics(here("2023-05-11_phstemplates", 
