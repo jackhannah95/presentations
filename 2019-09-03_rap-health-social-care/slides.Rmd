@@ -1,6 +1,6 @@
 ---
 title: "Reproducible Analytical <br> Pipelines for Health and <br> Social Care Publications"
-subtitle: "RSS Annual Conference 2019"
+subtitle: "RSS International Conference 2019"
 author: 'Jack Hannah & David Caldwell <br> NHS National Services Scotland <br>'
 date: "3 September 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-09-03_rap-health-social-care"
 output:
