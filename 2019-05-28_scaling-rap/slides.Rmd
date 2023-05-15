@@ -2,7 +2,7 @@
 title: "Scaling RAP <br> in NHS Scotland"
 subtitle: "Transforming Publishing Programme"
 author: 'Jack Hannah <br> Information Services Division <br>'
-date: "28 May 2019 <br><br> Slides: https://github.com/jackhannah95/rap-champions/"
+date: "28 May 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-05-28_scaling-rap"
 output:
   ioslides_presentation:
     css: my-theme.css
@@ -34,8 +34,7 @@ laid out in our [RAP paper](https://www.isdscotland.org/About-ISD/Methodologies/
 training course (run by [Jumping Rivers](https://www.jumpingrivers.com/)) and 
 attend a tutorial on using Git and GitHub (run internally by TPP)
 
-- Following this, we ask them to complete an [R Skills survey](https://www.nsssurvey2.scot.nhs.uk/index.php?r=survey/index/sid/296986/lang/en) 
-and a [short exercise](https://github.com/NHS-NSS-transforming-publications/R-exercise) 
+- Following this, we ask them to complete an R Skills survey and a [short exercise](https://github.com/NHS-NSS-transforming-publications/R-exercise) 
 to assess their competence with R
 
 - We also ask them to look at our [Toolkit](https://github.com/NHS-NSS-transforming-publications/Toolkit), which 
