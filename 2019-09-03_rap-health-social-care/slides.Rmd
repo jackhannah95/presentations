@@ -2,7 +2,7 @@
 title: "Reproducible Analytical <br> Pipelines for Health and <br> Social Care Publications"
 subtitle: "RSS Annual Conference 2019"
 author: 'Jack Hannah & David Caldwell <br> NHS National Services Scotland <br>'
-date: "3 September 2019 <br><br> Slides: https://github.com/jackhannah95/rss-2019"
+date: "3 September 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-09-03_rap-health-social-care"
 output:
   ioslides_presentation:
     widescreen: true
@@ -73,7 +73,7 @@ Basic principle is using one open-source piece of software for entire production
 - Sustainable = peer review
 - "Bells and whistles" = _functions, documenting/testing these functions, package management and computing environment_
 
-```{r out.width = "60%", fig.align = 'center'}
+```{r out.width = "50%", fig.align = 'center'}
 include_graphics(here::here("2019-09-03_rap-health-social-care", "images", "rap.jpg"))
 ```
 
@@ -128,7 +128,7 @@ A number of benefits have been realised with the RAP process for HSMR:
 - There is more time for exploratory analysis into potential improvements to the HSMR process
 
 
-## [Levels of RAP/automation](https://www.isdscotland.org/About-ISD/Methodologies/_docs/Reproducible_Analytical_Pipelines_paper_v1.4.pdf) {.smaller}
+## Levels of RAP/automation {.smaller}
 
 <br>
 ```{r, echo = FALSE, warning = FALSE}
@@ -160,8 +160,3 @@ kable(automation_levels,
 
 [Email](mailto:david.caldwell1@nhs.net)
 [GitHub](https://github.com/davidc92)
-
-### Transforming Publishing
-
-[Email](mailto:nss.isdtransformingpublishing@nhs.net)
-[GitHub](https://github.com/NHS-NSS-transforming-publications)
