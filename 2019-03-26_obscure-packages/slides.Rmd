@@ -2,7 +2,7 @@
 title: "Obscure Packages"
 subtitle: "PHI useR Group"
 author: 'Jack Hannah <br> Transforming Publishing Programme <br>'
-date: "26 March 2019 <br><br> Slides: https://github.com/jackhannah95/obscure-packages/"
+date: "26 March 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-03-26_obscure-packages"
 output:
   ioslides_presentation:
     css: my-theme.css
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE, results = "hold")
 ## tidylog
 
 - [tidylog](https://github.com/elbersb/tidylog) provides wrappers around basic 
-[dplyr](https://github.com/tidyverse/dplyr) functions
+[dplyr](https://dplyr.tidyverse.org/) functions
 
 - These wrapper functions print a message in the console to describe the result 
 of applying the corresponding dplyr function
@@ -74,7 +74,7 @@ copd <- df %>%
 
 - If you ever start an R script with setwd() or rm(list = ls()) - stop
 
-- Instead, use [here](https://github.com/r-lib/here) and [RStudio Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+- Instead, use [here](https://here.r-lib.org/) and [RStudio Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 
 - Projects automatically set your working directory and here allows you to 
 define filepaths relatively to it
@@ -101,7 +101,7 @@ readr::read_csv(here::here("2019-03-26_obscure-packages",
 
 ## janitor
 
-- [janitor](https://github.com/sfirke/janitor) provides a multitude of functions 
+- [janitor](https://sfirke.github.io/janitor/) provides a multitude of functions 
 for 'cleaning' data
 
 - It's specifically designed with beginner and intermediate R users in mind
@@ -109,7 +109,7 @@ for 'cleaning' data
 - While not part of the [tidyverse](https://www.tidyverse.org/packages/), it's 
 designed to work well with pipes
 
-```{r, echo = FALSE, fig.align = 'center'}
+```{r, echo = FALSE, fig.align = 'center', out.width = "30%"}
 include_graphics(here::here("2019-03-26_obscure-packages", "images", "janitor_logo.png"))
 ```
 
@@ -194,9 +194,5 @@ df %>%
 ## Links
 
 Email: [jack.hannah1@nhs.net](mailto:jack.hannah1@nhs.net)
-
-
-[Transforming Publishing on GitHub](https://github.com/NHS-NSS-transforming-publications)
-
 
 [PHI on GitHub](https://github.com/Health-SocialCare-Scotland)
