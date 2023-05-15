@@ -2,7 +2,7 @@
 title: "Best Practices in R"
 subtitle: "RAP/R Awareness Session"
 author: 'Jack Hannah <br> Transforming Publishing Programme <br>'
-date: "16 August 2019 <br><br> Slides: https://github.com/jackhannah95/rap-awareness"
+date: "16 August 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-08-16_r-best-practices"
 output:
   ioslides_presentation:
     css: my-theme.css
@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - Projects come with a `.Rproj` file, and wherever this is saved is where RStudio sets the working directory
 
-- Using projects is recommended in [PHI's R style guide](https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHI%20R%20style%20guide.md)
+- Using projects is recommended in [PHI's R style guide](https://github.com/Health-SocialCare-Scotland/R-Resources/blob/master/PHS%20R%20style%20guide.md)
 
 - A project which follows the recommended structure can be created automatically using the [phiproject package](https://github.com/Health-SocialCare-Scotland/phiproject)
 
@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - While not part of the [tidyverse](https://www.tidyverse.org/packages/), it's designed to work well with pipes
 
-```{r, echo = FALSE, fig.align = 'center'}
+```{r, echo = FALSE, fig.align = 'center', out.width = "30%"}
 include_graphics(here::here("2019-08-16_r-best-practices", "images", "janitor_logo.png"))
 ```
 
@@ -101,9 +101,6 @@ janitor::round_half_up(x)
 ## Links
 
 Email: [jack.hannah1@nhs.net](mailto:jack.hannah1@nhs.net)
-
-
-[Transforming Publishing on GitHub](https://github.com/NHS-NSS-transforming-publications)
 
 
 [PHI on GitHub](https://github.com/Health-SocialCare-Scotland)
