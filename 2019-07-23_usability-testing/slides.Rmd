@@ -2,7 +2,7 @@
 title: "Usability Testing"
 subtitle: "Transforming Publishing Programme"
 author: 'Jack Hannah <br> Information Services Division <br>'
-date: "23 July 2019 <br><br> Slides: https://github.com/jackhannah95/usability-testing"
+date: "23 July 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-07-23_usability-testing"
 output:
   ioslides_presentation:
     css: my-theme.css
@@ -112,9 +112,6 @@ Email: [jack.hannah1@nhs.net](mailto:jack.hannah1@nhs.net)
 
 
 [Internal ISD presentation on User Engagement and Research by John Mowbray](https://www.youtube.com/watch?v=1y4YrtGqwj0&feature=youtu.be)
-
-
-[Transforming Publishing on GitHub](https://github.com/NHS-NSS-transforming-publications)
 
 
 [PHI on GitHub](https://github.com/Health-SocialCare-Scotland)
