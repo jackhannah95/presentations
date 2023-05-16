@@ -1,8 +1,8 @@
 ---
-title: "phsmethods R Package"
+title: "Using the phsmethods Package"
 subtitle: "PHI useR Group"
 author: 'Jack Hannah <br> Transforming Publishing Programme <br>'
-date: "25 February 2020 <br><br> Slides: https://github.com/jackhannah95/phsmethods-useR"
+date: "25 February 2020 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2020-02-25_phsmethods"
 output:
   ioslides_presentation:
     css: my-theme.css
@@ -26,7 +26,7 @@ pub_text <- c("Table 1 (Hospital Standardised Mortality Ratios)",
                     "and quarter)"))
 ```
 
-## Why write [{phsmethods}](https://github.com/Health-SocialCare-Scotland/phsmethods)?
+## Why write [{phsmethods}](https://github.com/Public-Health-Scotland/phsmethods)?
 
 - Benefit to PHS: lots of analysts do the same things in different ways - it's a waste of time and effort and causes inconsistencies
 
@@ -42,7 +42,7 @@ file_size(here::here("2020-02-25_phsmethods", "data"))
 ```{r}
 # Excel files only
 file_size(here::here("2020-02-25_phsmethods", "data"), 
-          pattern = ".xlsx$")
+          pattern = "\\.xlsx$")
 ```
 
 ## file_size() in practice
@@ -52,41 +52,40 @@ This is the 'List of Tables' section from page 25 of the [2019-11-12 HSMR public
 include_graphics(here::here("2020-02-25_phsmethods", "images", "2019-11-12_HSMR-Tables.jpg"))
 ```
 
-## Recreate using file_size and [{gt}](https://github.com/rstudio/gt)
+## Recreate using file_size and [{gt}](https://gt.rstudio.com/)
 ```{r, gt, results = "hide", warning = FALSE}
 file_size(here::here("2020-02-25_phsmethods", "data"), 
-          pattern = ".xlsx?$") %>%
+          pattern = "\\.xlsx$") %>%
   mutate(name = pub_text) %>%
   gt() %>%
   tab_style(style = cell_borders(),
-            locations = cells_body(columns = everything(),
-                                   rows = everything())) %>%
+            locations = cells_body()) %>%
   tab_style(style = cell_text(color = "white", weight = "bolder"),
-            locations = cells_column_labels(columns = everything())) %>%
+            locations = cells_column_labels()) %>%
   tab_style(style = cell_text(color = "purple", 
                               decorate = "underline"),
             locations = cells_body(columns = vars(name))) %>%
   tab_style(style = cell_text(weight = "bold"),
             locations = cells_body(columns = vars(name, size))) %>%
   tab_style(style = cell_fill(color = "darkorchid4"),
-            locations = cells_column_labels(columns = everything())) %>%
+            locations = cells_column_labels()) %>%
   cols_width(vars(name) ~ px(620), TRUE ~ px(75)) %>%
   cols_label(name = "File Name", size = "File and Size")
 ```
 
-## Recreate using file_size and [{gt}](https://github.com/rstudio/gt)
+## Recreate using file_size and [{gt}](https://gt.rstudio.com/)
 
-```{r, ref.label = "gt", echo = FALSE}
+```{r, ref.label = "gt", echo = FALSE, warning = FALSE}
 ```
 
 ## fin_year() and qtr() functions
 
-```{r}
-lubridate::today()
+```{r, warning = FALSE}
+lubridate::dmy(25022020)
 
-fin_year(lubridate::today())
-qtr(lubridate::today())
-qtr(lubridate::today(), format = "short")
+fin_year(lubridate::dmy(25022020))
+qtr(lubridate::dmy(25022020))
+qtr(lubridate::dmy(25022020), format = "short")
 ```
 
 ## fin_year() and qtr() in RMarkdown
@@ -116,13 +115,8 @@ In RMarkdown:
 data_end <- lubridate::dmy(30062019)
 ```
 
-**During Quarter `` `r
-lubridate::quarter(data_end, fiscal_start = 4)` `` `` `r
-paste0("(", qtr(data_end), ")")` ``**  
-`` `r
-"\U2022"` `` In the `` `r
-english::ordinal(lubridate::quarter(data_end, fiscal_start = 4))` `` quarter of financial year `` `r
-fin_year(data_end)` ``, NHS Scotland contributed 23.1% (1,624 out of 7,026 self-reported twelve-week quits) towards the required annual LDP Standard. If this pattern continued for the remainder of the financial year, NHS Scotland would achieve 92.4% of the required Standard.
+During Quarter `lubridate::quarter(data_end, fiscal_start = 4)` `paste0("(", qtr(data_end), ")")`  
+`"\U2022"` In the `english::ordinal(lubridate::quarter(data_end, fiscal_start = 4))` quarter of financial year `fin_year(data_end)`, NHS Scotland contributed 23.1% (1,624 out of 7,026 self-reported twelve-week quits) towards the required annual LDP Standard. If this pattern continued for the remainder of the financial year, NHS Scotland would achieve 92.4% of the required Standard.
 
 ## Other functions in phsmethods
 
@@ -132,8 +126,6 @@ fin_year(data_end)` ``, NHS Scotland contributed 23.1% (1,624 out of 7,026 self-
 - `qtr_prev()` calculates the previous quarter
 
 ## Future developments
-
-- The package needs a new maintainer - I'm leaving in April
 
 - Contributions from others in PHS - development is under way to develop functions to group ages into age bands and to turn geography codes into names
 
@@ -147,6 +139,6 @@ fin_year(data_end)` ``, NHS Scotland contributed 23.1% (1,624 out of 7,026 self-
 
 - GitHub: [jackhannah95](https://github.com/jackhannah95)
 
-- [phsmethods GitHub repository](https://github.com/Health-SocialCare-Scotland/phsmethods)
+- [phsmethods GitHub repository](https://github.com/Public-Health-Scotland/phsmethods)
 
 - [Blogpost](https://www.tidyverse.org/blog/2017/08/contributing/) by Jim Hester on contributing to open source software
