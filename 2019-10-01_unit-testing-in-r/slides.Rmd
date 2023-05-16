@@ -2,7 +2,7 @@
 title: "Unit testing in R using <br> the testthat package"
 subtitle: "Scottish Government R user day"
 author: 'Jack Hannah <br> Information Services Division <br>'
-date: "1 October 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-10-01_unit-testing"
+date: "1 October 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-10-01_unit-testing-in-r"
 output:
   ioslides_presentation:
     widescreen: true
@@ -41,7 +41,7 @@ knitr::knit_hooks$set(error = function(x, options) {
 ## Why do unit testing?
 
 ```{r echo = FALSE, out.width = "75%", fig.align = 'center'}
-include_graphics(here::here("2019-10-01_unit-testing", "images", "pill-test.jpg"))
+include_graphics(here::here("2019-10-01_unit-testing-in-r", "images", "pill-test.jpg"))
 ```
 <center>
 
@@ -70,7 +70,7 @@ Source: [Cathy Wilcox](https://twitter.com/cathywilcox1/status/10729578484626145
 - It's designed with package development in mind, but there's no reason it can't be used to test functions in standalone scripts
 
 ```{r echo = FALSE, out.width = "25%", fig.align = 'center'}
-include_graphics(here::here("2019-10-01_unit-testing", "images", "testthat_logo.png"))
+include_graphics(here::here("2019-10-01_unit-testing-in-r", "images", "testthat_logo.png"))
 ```
 
 
@@ -174,7 +174,7 @@ test_that("Produces at least 52 instances of every day in 2020", {
 ## A practical example
 
 ```{r}
-test_file(here::here("2019-10-01_unit-testing", "code", "02_test-n_day.R"))
+test_file(here::here("2019-10-01_unit-testing-in-r", "code", "02_test-n_day.R"))
 ```
 
 

@@ -1,7 +1,7 @@
 library(testthat)
 
 # Source the n_day function
-source(here::here("2019-10-01_unit-testing", "code", "00_n_day.R"))
+source(here::here("2019-10-01_unit-testing-in-r", "code", "00_n_day.R"))
 
 test_that("Returns correct output", {
   expect_equal(n_day(lubridate::dmy(01012018), lubridate::dmy(31012018), 2), 5)

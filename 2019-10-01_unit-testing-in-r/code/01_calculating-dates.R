@@ -20,7 +20,7 @@ sum(format(seq(lubridate::dmy(01012020),
 ### 2: Use a function instead ----
 
 # Source in n_day function
-source(here::here("2019-10-01_unit-testing", "code", "00_n_day.R"))
+source(here::here("2019-10-01_unit-testing-in-r", "code", "00_n_day.R"))
 
 # Number of Tuesdays in January 2018
 n_day(lubridate::dmy(01012018), lubridate::dmy(31012018), 2)
