@@ -2,7 +2,7 @@
 title: "Unit testing in R using <br> the testthat package"
 subtitle: "Scottish Government R user day"
 author: 'Jack Hannah <br> Information Services Division <br>'
-date: "1 October 2019 <br><br> Slides: https://github.com/jackhannah95/unit-testing"
+date: "1 October 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-10-01_unit-testing"
 output:
   ioslides_presentation:
     widescreen: true
@@ -65,7 +65,7 @@ Source: [Cathy Wilcox](https://twitter.com/cathywilcox1/status/10729578484626145
 
 - "_Testing should be something that you do all the time, but it’s normally painful and boring_" - [Hadley Wickham](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf)
 
-- The [testthat](https://github.com/r-lib/testthat) package provides functions to automate unit testing
+- The [testthat](https://testthat.r-lib.org/) package provides functions to automate unit testing
 
 - It's designed with package development in mind, but there's no reason it can't be used to test functions in standalone scripts
 
@@ -114,8 +114,8 @@ If you have to do this lots of times, for different time periods, it's easier, s
 ```{r}
 n_day <- function(start, end, n) {
   
-  if (any(class(c(start, end)) != "Date")) {
-    stop("The start and end dates must be in date format")
+  if (!inherits(start, "Date") | !inherits(end, "Date")) {
+    stop("The start and end dates must have Date class")
   }
   
   # Note that Sunday is considered to be day 0; not day 7
@@ -146,11 +146,11 @@ n_day(dmy(01012020), dmy(31122020), 4)
 You might do some informal checks that the function works as expected:
 
 ```{r, error = TRUE, linewidth = 90}
-# Check that n_day errors if not supplied with a valid n
+# Check that n_day errors if supplied with invalid n
 n_day(dmy(01012020), dmy(31122020), 7)
 
 # Check that n_day produces at least 52 instances of every day in 2020
-unlist(purrr::map(0:6, ~ n_day(dmy(01012020), dmy(31122020), .x)))
+purrr::map_dbl(0:6, ~n_day(dmy(01012020), dmy(31122020), .x))
 ```
 
 
@@ -159,12 +159,12 @@ unlist(purrr::map(0:6, ~ n_day(dmy(01012020), dmy(31122020), .x)))
 But writing formal, automated tests is better:
 
 ```{r}
-test_that("Errors if supplied with input of incorrect class", {
+test_that("Errors if supplied with invalid n", {
   expect_error(n_day(dmy(01012020), dmy(31122020), 7))
 })
 
 test_that("Produces at least 52 instances of every day in 2020", {
-  instances <- unlist(purrr::map(0:6, ~ n_day(dmy(01012020), dmy(31122020), .x)))
+  instances <- purrr::map_dbl(0:6, ~n_day(dmy(01012020), dmy(31122020), .x))
   
   expect_true(all(instances >= 52))
 })
@@ -174,7 +174,7 @@ test_that("Produces at least 52 instances of every day in 2020", {
 ## A practical example
 
 ```{r}
-test_file(here::here("2019-10-01_unit-testing", "code", "03_test-n_day.R"))
+test_file(here::here("2019-10-01_unit-testing", "code", "02_test-n_day.R"))
 ```
 
 
@@ -184,12 +184,6 @@ test_file(here::here("2019-10-01_unit-testing", "code", "03_test-n_day.R"))
 
 [Email](mailto:jack.hannah1@nhs.net)
 [GitHub](https://github.com/jackhannah95)
-
-### Transforming Publishing Programme
-
-[Email](mailto:nss.isdtransformingpublishing@nhs.net)
-[GitHub](https://github.com/NHS-NSS-transforming-publications)
-[Website](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/)
 
 ### ISD
 

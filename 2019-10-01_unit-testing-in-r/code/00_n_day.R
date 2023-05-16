@@ -1,7 +1,7 @@
 n_day <- function(start, end, n) {
   
-  if (any(class(c(start, end)) != "Date")) {
-    stop("The start and end dates must be in date format")
+  if (!inherits(start, "Date") | !inherits(end, "Date")) {
+    stop("The start and end dates must have Date class")
   }
   
   # Note that Sunday is considered to be day 0; not day 7
