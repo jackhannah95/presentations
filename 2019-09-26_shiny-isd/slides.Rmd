@@ -2,7 +2,7 @@
 title: "Using Shiny at ISD"
 subtitle: "RSS Glasgow Local Group"
 author: 'Jack Hannah <br> Information Services Division <br>'
-date: "26 September 2019 <br><br> Slides: https://github.com/jackhannah95/rss-glasgow"
+date: "26 September 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-09-26_shiny-isd"
 output:
   ioslides_presentation:
     widescreen: true
@@ -33,7 +33,7 @@ include_graphics(here::here("2019-09-26_shiny-isd", "images", "pdf_report.png"))
 "Users of statistics and data should be at the centre of statistical production; their needs should be understood, their views sought and acted upon, and their use of statistics supported."
 </p>
 
-<p style="text-align: right"> <a href="https://www.statisticsauthority.gov.uk/wp-content/uploads/2018/02/Code-of-Practice-for-Statistics.pdf">- UKSA Code of Practice for Statistics, 2018</a></p>
+<p style="text-align: right"> <a href="https://code.statisticsauthority.gov.uk/wp-content/uploads/2018/02/Code-of-Practice-for-Statistics.pdf#page=16">- UKSA Code of Practice for Statistics, 2018</a></p>
 
 
 ## The Transforming Publishing Programme
@@ -45,7 +45,7 @@ include_graphics(here::here("2019-09-26_shiny-isd", "images", "pdf_report.png"))
 - Uses ["Agile" methodology](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/Agile-Project-Management/) for project management
 
 
-## TPP's "vision"
+## TPP's "Vision"
 
 ```{r out.width = "60%", fig.align = 'center'}
 include_graphics(here::here("2019-09-26_shiny-isd", "images", "vision_poster.png"))
@@ -58,7 +58,7 @@ include_graphics(here::here("2019-09-26_shiny-isd", "images", "vision_poster.png
 
 - Replacing PDF reports with web applications built using Shiny and D3
 
-- Using git and [GitHub](https://github.com/NHS-NSS-transforming-publications) for version control and peer review
+- Using git and GitHub for version control and peer review
 
 - A full user research process
 
@@ -87,9 +87,9 @@ include_graphics(here::here("2019-09-26_shiny-isd", "images", "user_research_pro
 
 ## Mental Health Inpatient Activity
 
-- The [Mental Health Inpatient Activity](https://www.isdscotland.org/Health-Topics/Mental-Health/Publications/2019-09-10/mental-health-inpatient-activity/) publication was the second official statistics publication in ISD to be released using Shiny
+- The [Mental Health Inpatient Activity](https://www.isdscotland.org/Health-Topics/Mental-Health/Publications/2019-09-10/mental-health-inpatient-activity/data-explorer/) publication was the second official statistics publication in ISD to be released using Shiny
 
-- It was first released in [September 2018](https://www.isdscotland.org/Health%2DTopics/Mental%2DHealth/Publications/2018%2D09%2D25/psychiatric%2Dinpatient%2Dactivity/)
+- It was first released in [September 2018](https://www.isdscotland.org/Health-Topics/Mental-Health/Publications/2018-09-25/psychiatric-inpatient-activity/data-explorer/)
 
 - The entire development process, from initial user engagement to the first release, took around six months
 
@@ -105,9 +105,9 @@ include_graphics(here::here("2019-09-26_shiny-isd", "images", "quotes.png"))
 
 Not an exhaustive list:
 
-- [Acute Hospital Activity](https://www.isdscotland.org/Health-Topics/Hospital-Care/Publications/2019-05-28/acute-hospital-publication/?41624087096)
+- [Acute Hospital Activity](https://www.isdscotland.org/Health-Topics/Hospital-Care/Publications/2019-05-28/Acute-Hospital-Publication/data-explorer/)
 
-- [Drug-Related Hospital Statistics](https://www.isdscotland.org/Health-Topics/Drugs-and-Alcohol-Misuse/Publications/2019-05-28/visualisation.asp)
+- [Drug-Related Hospital Statistics](https://www.isdscotland.org/Health-Topics/Drugs-and-Alcohol-Misuse/Publications/2019-05-28/data-explorer.html)
 
 - [Alcohol Brief Interventions](https://www.isdscotland.org/Health-Topics/Drugs-and-Alcohol-Misuse/Publications/2019-06-25/visualisation.asp)
 
@@ -136,12 +136,6 @@ include_graphics(here::here("2019-09-26_shiny-isd", "images", "question_mark.png
 
 [Email](mailto:jack.hannah1@nhs.net)
 [GitHub](https://github.com/jackhannah95)
-
-### Transforming Publishing Programme
-
-[Email](mailto:nss.isdtransformingpublishing@nhs.net)
-[GitHub](https://github.com/NHS-NSS-transforming-publications)
-[Website](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/)
 
 ### ISD
 
