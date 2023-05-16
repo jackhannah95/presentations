@@ -2,7 +2,7 @@
 title: "Working at ISD"
 subtitle: "University of Glasgow Induction Week 2019"
 author: 'Jack Hannah & David Caldwell <br> Information Services Division <br>'
-date: "25 September 2019 <br><br> Slides: https://github.com/jackhannah95/uofg-isd"
+date: "25 September 2019 <br><br> Slides: https://github.com/jackhannah95/presentations/tree/main/2019-09-25_working-at-isd"
 output:
   ioslides_presentation:
     widescreen: true
@@ -40,7 +40,7 @@ Two main projects:
 ## What does RAP involve?
 
 ```{r out.width = "90%", fig.align = 'center'}
-include_graphics(here::here("2019-09-25_gu-isd", "images", "new_process.png"))
+include_graphics(here::here("2019-09-25_working-at-isd", "images", "new_process.png"))
 ```
 
 
@@ -53,14 +53,11 @@ Some of the more interesting projects:
   
 - Shiny
   - Transforming [traditional PDF](https://www.isdscotland.org/Health-Topics/Hospital-Care/Publications/2017-06-27/2017-06-27-AcuteActivityQuarterly-Report.pdf?97298830748) statistical publications into [interactive dashboards](https://scotland.shinyapps.io/isd-hospital-activity-may19/) using the [shiny](https://shiny.rstudio.com/) package in R
-  
-- Open source contributions
-  - Making contributions to the [testthat](https://github.com/r-lib/testthat) and [tidylog](https://github.com/elbersb/tidylog) R packages via GitHub
 
 
 ## Other interesting work in ISD
 
-- [Mortality trends](https://www.scotpho.org.uk/population-dynamics/recent-mortality-trends/)
+- [Mortality trends](https://www.scotpho.org.uk/population-dynamics/stalling-mortality-trends/)
   - Investigating how trends in mortality are influenced by government austerity, pressure on NHS services and influenza outbreaks
   
 - [Suicide statistics](https://www.isdscotland.org/Health-Topics/Public-Health/Publications/2019-06-26/2019-06-26-Suicide-Summary.pdf?)
@@ -88,14 +85,14 @@ ISD has offices in a number of locations, but the two main ones are in Edinburgh
 <div style="float: left; width: 50%; text-align: left">
 **The Edinburgh Office**
 ```{r out.width = "70%", fig.align = 'left'}
-include_graphics(here::here("2019-09-25_gu-isd", "images", "gyle_location.png"))
+include_graphics(here::here("2019-09-25_working-at-isd", "images", "gyle_location.png"))
 ```
 </div>
 
 <div style="float: right; width: 50%;">
 **The Glasgow Office**
 ```{r out.width = "65%", fig.align = 'left'}
-include_graphics(here::here("2019-09-25_gu-isd", "images", "meridian_location.png"))
+include_graphics(here::here("2019-09-25_working-at-isd", "images", "meridian_location.png"))
 ```
 </div>
 
@@ -124,12 +121,6 @@ The recruitment process is usually two stages:
 
 [Email](mailto:david.caldwell1@nhs.net)
 [GitHub](https://github.com/davidc92)
-
-### Transforming Publishing Programme (the team we're part of)
-
-[Email](mailto:nss.isdtransformingpublishing@nhs.net)
-[GitHub](https://github.com/NHS-NSS-transforming-publications)
-[Website](https://www.isdscotland.org/Products-and-Services/Transforming-Publishing-Programme/)
 
 ### ISD
 
